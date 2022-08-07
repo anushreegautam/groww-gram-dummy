@@ -11,7 +11,7 @@ const userInfo = (state = initialState, action) => {
     case 'FETCH_USER_INFO_SUCCESS': 
       return {...state, data: action?.payload, isLoading: false}
     case 'FETCH_USER_INFO_FAIL':
-      return {...state, error: action?.payload, isLoading: false}
+      return {...state, error: true, isLoading: false}
     default:
       return state        
   }

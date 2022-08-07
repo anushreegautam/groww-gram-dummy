@@ -4,7 +4,7 @@ import { faCameraRetro } from '@fortawesome/free-solid-svg-icons'
 
 const EmptyView = () => (
   <div className="empty-view">
-    <FontAwesomeIcon icon={faCameraRetro} className="camera-icon" />
+    <FontAwesomeIcon icon={faCameraRetro} className="fa-5x" />
     <span>No photos</span>
   </div>  
 )

@@ -1,23 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
 
-const Card = ({ photo }) => { 
-
-  return (
+const Card = ({ photo }) => (
     <div className="card">
       <div className="card-container" >
         <div className="profile-photo">
-          <img src={photo?.user?.profile_image?.small } />
+          <img src={photo?.user?.profile_image?.large } alt={photo.id}/>
         </div>
         <div className="name-location">
           <Link to={`/user/${photo?.user?.username}`}>{photo?.user?.username}</Link>
           {photo?.location?.title && <span className="plain-text">{photo?.location?.title}</span>}
         </div>
       </div>  
-      <img src={photo?.urls?.small}/>
-      <div className="card-container">
+      <img src={photo?.urls?.small} alt={photo.id}/>
+      <div className="card-container likes">
         <FontAwesomeIcon icon={faHeart} />
         <h3>{photo?.likes} likes</h3>
       </div>
@@ -29,6 +27,5 @@ const Card = ({ photo }) => {
       )}
     </div> 
   )
-}
 
 export default Card

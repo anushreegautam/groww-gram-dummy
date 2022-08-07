@@ -9,9 +9,9 @@ const randomPhotosList = (state = initialState, action) => {
     case 'FETCH_RANDOM_PHOTOS_START': 
       return {...state, isLoading: true}
     case 'FETCH_RANDOM_PHOTOS_SUCCESS': 
-      return {...state, data: action?.payload, isLoading: false}
+      return {...state, data: [...state.data , ...action?.payload], isLoading: false}
     case 'FETCH_RANDOM_PHOTOS_FAIL':
-      return {...state, error: action?.payload, isLoading: false}
+      return {...state, error: true, isLoading: false}
     default:
       return state        
   }

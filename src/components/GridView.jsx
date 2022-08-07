@@ -2,9 +2,9 @@ import React from 'react'
 
 const GridView = ({ userPhotos }) => (
   <div className="grid-view">
-   {userPhotos?.map((photo, index) => (
+   {userPhotos?.map(photo => (
     <img 
-    key={`groww-gram-user-grid-${index}`}
+      key={`groww-gram-user-grid-${photo?.id}`}
       src={photo?.urls?.thumb} 
     />
    ))}
